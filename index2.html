@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Notificações</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .notification-preview {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+        .notification-preview img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Personalizar Notificações</h1>
+    <div class="form-group">
+        <label for="iconUrl">URL do Ícone:</label>
+        <input type="text" id="iconUrl" placeholder="https://exemplo.com/icon.png">
+    </div>
+    <div class="form-group">
+        <label for="title">Título:</label>
+        <input type="text" id="title" placeholder="Título da Notificação">
+    </div>
+    <div class="form-group">
+        <label for="message">Mensagem:</label>
+        <input type="text" id="message" placeholder="Mensagem da Notificação">
+    </div>
+    <button onclick="updateNotification()">Atualizar Notificação</button>
+
+    <div class="notification-preview" id="notificationPreview">
+        <img src="https://via.placeholder.com/40" alt="Ícone" id="previewIcon">
+        <div>
+            <strong id="previewTitle">Título da Notificação</strong>
+            <p id="previewMessage">Mensagem da Notificação</p>
+        </div>
+    </div>
+
+    <script>
+        function updateNotification() {
+            const iconUrl = document.getElementById('iconUrl').value || 'https://via.placeholder.com/40';
+            const title = document.getElementById('title').value || 'Título da Notificação';
+            const message = document.getElementById('message').value || 'Mensagem da Notificação';
+
+            document.getElementById('previewIcon').src = iconUrl;
+            document.getElementById('previewTitle').textContent = title;
+            document.getElementById('previewMessage').textContent = message;
+        }
+    </script>
+
+</body>
+</html>
